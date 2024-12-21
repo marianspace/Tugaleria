@@ -1,0 +1,17 @@
+# Ignorar carpetas y archivos comunes
+*.log
+*.tmp
+*.swp
+.DS_Store
+
+# Ignorar carpetas específicas
+venv/
+OneDrive/
+PSeInt/
+
+# Ignorar todos los entornos virtuales
+**/venv/
+
+# Ignorar archivos de configuración del sistema
+.idea/
+.vscode/

@@ -1,0 +1,10 @@
+        <div class="gallery-container">
+            <div class="card">
+                <img src="img/1.jpg" alt="Obra 1">
+                <h3>Título de la Obra</h3>
+                <p>Artista: Nombre del Artista</p>
+                <p>Técnica: Técnica de la Obra</p>
+                <p>Año: Año de Creación</p>
+                <p>Precio: $Precio</p>
+                <p><a href="#reseña-obra1">Ver reseña del artista o la obra</a></p>
+            </div>
