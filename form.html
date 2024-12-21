@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuGalery - Cargar Obras y Reseñas</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&family=Piazzolla:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-left">
+                <h1>TuGalery</h1>
+                <p>Tu arte cerca</p>
+            </div>
+            <nav class="header-right">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../galeria.html">Obras</a></li>
+                    <li><a href="">Artistas</a></li>
+                    <li><a href="../contacto.html">Contacto</a></li>
+                    <li><a href="">Exposiciones</a></li>
+                    <li><a href="../posts.html">Reseñas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="cargar-obras-reseñas">
+            <h2>Cargar Nuevas Obras y Reseñas</h2>
+            
+            <form action="procesar_obras_reseñas.php" method="POST" enctype="multipart/form-data">
+                <div class="form-section">
+                    <h3>Cargar Obra</h3>
+                    <label for="titulo-obra">Título de la Obra:</label>
+                    <input type="text" id="titulo-obra" name="titulo-obra" required>
+
+                    <label for="artista">Artista:</label>
+                    <input type="text" id="artista" name="artista" required>
+
+                    <label for="tecnica">Técnica:</label>
+                    <input type="text" id="tecnica" name="tecnica" required>
+
+                    <label for="anio">Año de Creación:</label>
+                    <input type="number" id="anio" name="anio" required>
+
+                    <label for="precio">Precio:</label>
+                    <input type="number" id="precio" name="precio" required>
+
+                    <label for="imagen-obra">Imagen de la Obra:</label>
+                    <input type="file" id="imagen-obra" name="imagen-obra" accept="image/*" required>
+
+                    <input type="submit" value="Cargar Obra">
+                </div>
+            </form>
+
+            <form action="procesar_reseña.php" method="POST">
+                <div class="form-section">
+                    <h3>Cargar Reseña</h3>
+                    <label for="titulo-reseña">Título de la Reseña:</label>
+                    <input type="text" id="titulo-reseña" name="titulo-reseña" required>
+
+                    <label for="contenido-reseña">Contenido de la Reseña:</label>
+                    <textarea id="contenido-reseña" name="contenido-reseña" rows="5" required></textarea>
+
+                    <label for="obra-relacionada">Obra Relacionada:</label>
+                    <select id="obra-relacionada" name="obra-relacionada" required>
+                        <option value="obra1">Obra 1</option>
+                        <option value="obra2">Obra 2</option>
+                        <option value="obra3">Obra 3</option>
+                        <option value="obra4">Obra 4</option>
+                        <!-- Aquí puedes cargar las obras disponibles dinámicamente -->
+                    </select>
+
+                    <input type="submit" value="Cargar Reseña">
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TuGalery - Todos los derechos reservados</p>
+        <p>Mariana Constanza</p>
+        <p>Redes</p> <!-- iconos de redes -->
+    </footer>
+</body>
+</html>

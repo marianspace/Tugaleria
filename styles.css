@@ -1,141 +1,119 @@
-@import url(css/main.css);
-@import url(css/responsive.css);
-@import url(https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Lexend:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('css/resenia.css');
+@import url('css/galeria.css');
+@import url('css/contacto.css');
+
+/* Body */
+body {
+    font-family: 'lexend';
+    background-color: #ffffff;
+    margin: 1;
+    padding: 1;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    background-color: #e1f7f5;
+    padding: 1rem 2rem;
+    color: #0288d1;
+}
+
+nav ul { 
+    list-style: none; 
+    padding: 0; 
+    display: flex; 
+    justify-content: center; 
+    gap: 1rem; 
+}
+
+/* Footer */
+footer {
+    background-color: #b7f4f0;
+    color: #0288d1;
+    text-align: center;
+    padding: 1rem;
+}
+
+/*Estilos de texto*/
+h1 {
+    color: #01579b; 
+    transition: color 0.3s ease;
+}
+
+h2 {
+    color: #01579b; 
+    transition: color 0.3s ease;
+}
+
+h3 {
+    color: #01579b; 
+    transition: color 0.3s ease;
+}
+
+h4 {
+    color: #01579b; 
+    transition: color 0.3s ease;
+}
+
+h5 {
+    color: #01579b; 
+    transition: color 0.3s ease;
+}
+
+h6 {
+    color: #01579b; 
+    transition: color 0.3s ease;
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+    color: #01579b; 
+}
+
+a {
+    color: #01579b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #8e24aa;
+}
 
 /* Carrusel */
 .carousel {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    gap: 1rem;
+    gap: 0.1rem;
     padding: 1rem;
 }
 
 .carousel-item {
     flex: 0 0 auto;
     scroll-snap-align: center;
-    width: 80%;
+    width: 30%;
 }
 
 .carousel-item img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 10%;
 }
 
-/* Galería */
-
-.gallery-container {
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    justify-items: center;
-    margin: 20px auto; 
-    max-width: 1200px;
+/* Responsive*/
+/*Carrusel*/
+@media (max-width: 768px) {
+    .carousel-item {
+        width: 45%; /* Reducir el tamaño de las imágenes en pantallas más pequeñas */
+    }
 }
 
-.card {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 10px; 
-    margin: 10px;
-    border-radius: 10px;
-    text-align: center; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+@media (max-width: 480px) {
+    .carousel-item {
+        width: 80%; /* Las imágenes ocupan más espacio en pantallas aún más pequeñas */
+    }
+    .carousel {
+        gap: 0.25rem; /* Reducir aún más el espacio entre imágenes */
+    }
 }
-
-.card1 {
-    background-color: #ffffff;
-    border: 1px solid #031224;
-    padding: 10px; 
-    margin: 10px;
-    border-radius: 10px;
-    max-width: 350px;
-    min-width: 250px;
-    margin: 20px auto;
-    text-align: center; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.card h3 {
-    color: #0cb7f2;
-}
-
-.card img {
-    width: 100%;              /* Asegura que la imagen ocupe todo el ancho de la card */
-    height: auto;             /* Mantiene la relación de aspecto de la imagen */
-    border-bottom: 1px solid #ccc; /* Añade una línea divisoria debajo de la imagen */
-}
-
-.card:hover {
-    transform: scale(1.05);   /* Efecto de escala al pasar el ratón sobre la card */
-}
-
-/* Reseñas */
-.reviews {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
-    padding: 2rem;
-    background-color: #f5f5f5;
-}
-
-.review-item {
-    padding: 1rem;
-    border-left: 3px solid #9b89b3;
-    font-style: italic;
-}
-
-.flex-container {
-    background-color: #0cb7f2;
-    border: 2px solid #031224;
-    padding: 10px; 
-    margin: 10px;
-}
-
-.flex-box {
-    background-color: #ffffff;
-    border: 2px solid #031224;    
-}
-
-/* Contacto */
-.contact-form {
-    padding: 2rem;
-    background-color: #e3f6fc;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contact-form form {
-    width: 100%;
-    max-width: 400px;
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-.contact-form button {
-    background-color: #0cb7f2;
-    color: #ffffff;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.contact-form button:hover {
-    background-color: #0893c1;
-}
-
