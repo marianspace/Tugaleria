@@ -32,7 +32,7 @@
     <main>
         <section id="cargar-obras-reseñas">
             <h2>Cargar Nuevas Obras y Reseñas</h2>
-            
+
             <form action="procesar_obras_reseñas.php" method="POST" enctype="multipart/form-data">
                 <div class="form-section">
                     <h3>Cargar Obra</h3>
@@ -55,28 +55,6 @@
                     <input type="file" id="imagen-obra" name="imagen-obra" accept="image/*" required>
 
                     <input type="submit" value="Cargar Obra">
-                </div>
-            </form>
-
-            <form action="procesar_reseña.php" method="POST">
-                <div class="form-section">
-                    <h3>Cargar Reseña</h3>
-                    <label for="titulo-reseña">Título de la Reseña:</label>
-                    <input type="text" id="titulo-reseña" name="titulo-reseña" required>
-
-                    <label for="contenido-reseña">Contenido de la Reseña:</label>
-                    <textarea id="contenido-reseña" name="contenido-reseña" rows="5" required></textarea>
-
-                    <label for="obra-relacionada">Obra Relacionada:</label>
-                    <select id="obra-relacionada" name="obra-relacionada" required>
-                        <option value="obra1">Obra 1</option>
-                        <option value="obra2">Obra 2</option>
-                        <option value="obra3">Obra 3</option>
-                        <option value="obra4">Obra 4</option>
-                        <!-- Aquí puedes cargar las obras disponibles dinámicamente -->
-                    </select>
-
-                    <input type="submit" value="Cargar Reseña">
                 </div>
             </form>
         </section>
