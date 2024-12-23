@@ -1,7 +1,7 @@
-# TuGalery
+# TuGalery (aun terminado algunas cosas)
 Front-End JS - Ejercicios Final 
 ##### Creadora Mariana Constanza
-Githubpage https://marianspace.github.io/tugalery
+Githubpage https://marianspace.github.io/Tugaleria/
 
 Es un proyecto que vengo pensando desde el año pasado.
 Una galeria de arte donde los artistas puedan subir sus obras, darse a conocer y venderlas. 
