@@ -29,21 +29,32 @@
         </div>
     </header>
     <main>
-    <section id="obras" class="card1">          
-            <h3>Título de la Obra</h3>
-            <p>Artista: Nombre del Artista</p>
-            <p>Técnica: Técnica de la Obra</p>
-            <p>Año: Año de Creación</p>
-            <p>Precio: $Precio</p>
-            <img src="../img/3.jpg" alt="Obra 3" style="width: 350px;">
-            <p><a href="#reseña-obra1">Ver reseña del artista o la obra</a></p>
-    </section>
-    </main>
+        <!-- la idea es que a los costados se pueda navegar para la anterior y posterior-->
+        <section id="obras" class="card1">
+            <h3>Familia</h3>
+            <p>Artista: Mariana</p>
+            <p>Técnica: Bordado sobre fotografía</p>
+            <p>Año: 2023</p>
+            <p>Precio: $5000</p>
+            <a href="../img/3.jpg" target="_blank">
+                <img src="../img/3.jpg" alt="Obra 1" style="width: 350px;"></a>
+            <p><a href="#reseña-obra3">Ver reseña del artista o la obra</a></p>
+
+            <button onclick="agregarAlCarrito('Título de la Obra', 'Nombre del Artista', 3500)">Añadir al Carrito</button>
+        </section>
+    
+        <section id="carrito">
+            <h2>Carrito de Compras</h2>
+            <ul id="lista-carrito"></ul>
+            <p>Total: $<span id="total"></span></p>
+        </section>
+        
+        </main>
     <footer>
         <p>&copy; 2024 TuGalery - Todos los derechos reservados</p>
         <p>Mariana Constanza</p>
         <p>Redes</p> <!-- iconos de redes -->
     </footer>
-
+    <script src="../script.js"></script>
 </body>
 </html>

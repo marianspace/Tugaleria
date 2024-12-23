@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TuGalery - Tu arte cerca</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&family=Piazzolla:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -32,51 +29,7 @@
     <section id="obras" class="gallery">
         <h2>Obras</h2>
         <div class="gallery-container">
-            <div class="card"><a href="obras/01.html">
-                <img src="img/1.jpg" alt="Pintura abstracta con colores cálidos representando la emoción humana"></a>
-                <h3>Título de la Obra</h3>
-                <p>Artista: Nombre del Artista</p>
-                <p>Técnica: Acrílico sobre lienzo</p>
-                <p>Año: 2024</p>
-                <p>Precio: $500</p>
-                <p><a href="#reseña-obra1">Ver reseña del artista o la obra</a></p>
-            </div>
-            <div class="card"><a href="obras/02.html">
-                <img src="img/2.jpg" alt="Obra 2"></a>
-                <h3>Título de la Obra</h3>
-                <p>Artista: Nombre del Artista</p>
-                <p>Técnica: Técnica de la Obra</p>
-                <p>Año: Año de Creación</p>
-                <p>Precio: $Precio</p>
-                <p><a href="#reseña-obra2">Ver reseña del artista o la obra</a></p>
-            </div>
-            <div class="card"><a href="obras/03.html">
-                <img src="img/3.jpg" alt="Obra 3"></a>
-                <h3>Título de la Obra</h3>
-                <p>Artista: Nombre del Artista</p>
-                <p>Técnica: Técnica de la Obra</p>
-                <p>Año: Año de Creación</p>
-                <p>Precio: $Precio</p>
-                <p><a href="#reseña-obra2">Ver reseña del artista o la obra</a></p>
-            </div>
-            <div class="card"><a href="obras/04.html">
-                <img src="img/4.jpg" alt="Obra 4"></a>
-                <h3>Título de la Obra</h3>
-                <p>Artista: Nombre del Artista</p>
-                <p>Técnica: Técnica de la Obra</p>
-                <p>Año: Año de Creación</p>
-                <p>Precio: $Precio</p>
-                <p><a href="#reseña-obra2">Ver reseña del artista o la obra</a></p>
-            </div>
-            <div class="card">
-                <img src="img/5.jpg" alt="Obra 5">
-                <h3>Título de la Obra</h3>
-                <p>Artista: Nombre del Artista</p>
-                <p>Técnica: Técnica de la Obra</p>
-                <p>Año: Año de Creación</p>
-                <p>Precio: $Precio</p>
-                <p><a href="#reseña-obra2">Ver reseña del artista o la obra</a></p>
-            </div>
+    
         </div>
     </section>
     </main>
@@ -85,5 +38,30 @@
         <p>Mariana Constanza</p>
         <p>Redes</p> <!-- iconos de redes -->
     </footer>
+    <script>
+        fetch('obras/obras.json')  
+            .then(response => response.json())
+            .then(obras => {
+                const contenedorGaleria = document.querySelector('.gallery-container');
+
+                obras.forEach(obra => {
+                    const divObra = document.createElement('div');
+                    divObra.classList.add('card');
+                    divObra.innerHTML = `
+                        <a href="obras/${obra.titulo}.html">
+                            <img src="img/${obra.titulo}.jpg" alt="${obra.titulo}">
+                        </a>
+                        <h3>${obra.titulo}</h3>
+                        <p>Artista: ${obra.artista}</p>
+                        <p>Técnica: ${obra.tecnica}</p>
+                        <p>Año: ${obra.ano}</p>
+                        <p>Precio: $${obra.precio}</p>
+                        <p><a href="#reseña-${obra.titulo}">Ver reseña del artista o la obra</a></p>
+                    `;
+                    contenedorGaleria.appendChild(divObra);
+                });
+            })
+            .catch(error => console.error('Error al cargar las obras:', error));
+    </script>
 </body>
 </html>
