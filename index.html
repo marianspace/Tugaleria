@@ -3,25 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aún en proceso -  en breve se habilitará</title>
+    <title>TuGalery - Tu arte cerca</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="mensaje-desarrollo">
+Todavía no esta terminada
+    </div>
+
     <header>
         <div class="header-content">
             <div class="header-left">
-                <h1>
-                    en Proceso
-                </h1>
-                <p>En breve se habilitará</p>
+                <h1>TuGalery</h1>
+                <p>Tu arte cerca</p>
             </div>
+            <nav class="header-right">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="galeria.html">Obras</a></li>
+                    <li><a href="#">Artistas</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="#">Exposiciones</a></li>
+                    <li><a href="posts.html">Reseñas</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <footer>
+    <main>
+        <!-- Carrusel -->
+        <section id="inicio" class="carousel">
+            <div class="carousel-item"><a href="obras/01.html"><img src="img/1.jpg" alt="Obra destacada 1"></a></div>
+            <div class="carousel-item"><a href="obras/02.html"><img src="img/2.jpg" alt="Obra destacada 2"></a></div>
+            <div class="carousel-item"><a href="obras/03.html"><img src="img/3.jpg" alt="Obra destacada 3"></a></div>
+            <div class="carousel-item"><a href="obras/04.html"><img src="img/4.jpg" alt="Obra destacada 4"></a></div>
+            <div class="carousel-item"><a href="obras/01.html"><img src="img/5.jpg" alt="Obra destacada 5"></a></div>
+        </section>
 
+        <!-- Reseñas -->
+        <section id="reseñas" class="reviews">
+            <h2>Última Reseña</h2>
+            <div class="review-item">
+                <p>Reseña del artista o sobre la obra...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TuGalery - Todos los derechos reservados</p>
+        <p>Mariana Constanza</p>
+        <p>Redes</p> <!-- iconos de redes -->
     </footer>
 
-    <script src="script.js"></script> 
+    <script src="script.js"></script>
 </body>
 </html>
+
 

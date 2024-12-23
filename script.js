@@ -1,16 +1,16 @@
 // Variables globales
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-// Función para agregar una obra al carrito
+// Carrito
+//Agregar
 function agregarAlCarrito(titulo, artista, precio) {
-    // Verificar si la obra ya está en el carrito
     const productoExistente = carrito.find(producto => producto.titulo === titulo);
     if (productoExistente) {
         alert(`La obra "${titulo}" ya está en el carrito.`);
         return;
     }
 
-    // Agregar nueva obra al carrito
+// Agregar nueva obra al carrito
     carrito.push({ titulo, artista, precio, cantidad: 1 });
     localStorage.setItem('carrito', JSON.stringify(carrito));
     actualizarCarrito();
@@ -60,7 +60,7 @@ function comprarProductos() {
         return;
     }
 
-    // Simular compra
+// Simular compra
     alert('Gracias por tu compra. El carrito será vaciado.');
     carrito = [];
     localStorage.setItem('carrito', JSON.stringify(carrito));
