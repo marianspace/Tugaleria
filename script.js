@@ -7,7 +7,7 @@ const obras = [
     {
       id: "1",
       titulo: "Colores",
-      img: "../img/1.jpg",
+      img: "./img/1.jpg",
       artista: "Mariana",
       tecnica: "Bordado",
       ano: 2020,
@@ -29,7 +29,7 @@ const obras = [
     {
       id: "3",
       titulo: "Familia",
-      img: "/img/3.jpg",
+      img: "img/3.jpg",
       artista: "Mariana",
       tecnica: "Bordado sobre fotografía",
       ano: 2023,
@@ -41,7 +41,7 @@ const obras = [
       id: "4",
       titulo: "Una Mano",
       artista: "Constanza",
-      img: "/img/4.jpg",
+      img: "../img/4.jpg",
       tecnica: "Bordado sobre fotografía",
       ano: 2023,
       precio: 5000,
