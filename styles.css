@@ -1,133 +1,148 @@
-@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Lexend:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('css/resenia.css');
-@import url('css/galeria.css');
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Lexend:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap'); /* fonts*/
 @import url('css/contacto.css');
+@import url('css/tienda.css');
+@import url('css/galeria.css');
 
-/* Body */
-body {
-    font-family: 'lexend';
-    background-color: #ffffff;
-    margin: 1;
-    padding: 1;
+/*general*/
+:root {
+    --color1: #b7f4f0;
+    --color2: #ffffff;
+    --color3: #e1f7f5;
+    --colordes: #01579b;
+    --colortipo: #0288d1;
 }
 
-/* Header */
-header {
-    display: flex;
-    flex-direction: column;
-    background-color: #e1f7f5;
-    padding: 1rem 2rem;
-    color: #0288d1;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-nav ul { 
-    list-style: none; 
-    padding: 0; 
-    display: flex; 
-    justify-content: center; 
-    gap: 1rem; 
-}
-
-/* Footer */
-footer {
-    background-color: #b7f4f0;
-    color: #0288d1;
-    text-align: center;
-    padding: 1rem;
-}
-
-/*Estilos de texto*/
-h1 {
-    color: #01579b; 
-    transition: color 0.3s ease;
-}
-
-h2 {
-    color: #01579b; 
-    transition: color 0.3s ease;
-}
-
-h3 {
-    color: #01579b; 
-    transition: color 0.3s ease;
-}
-
-h4 {
-    color: #01579b; 
-    transition: color 0.3s ease;
-}
-
-h5 {
-    color: #01579b; 
-    transition: color 0.3s ease;
-}
-
-h6 {
-    color: #01579b; 
+h1, h2, h3, h4, h5, h6 {
+    color: var(--colordes); 
     transition: color 0.3s ease;
 }
 
 h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
-    color: #01579b; 
+    color: var(--colordes); 
 }
 
 a {
-    color: #01579b;
+    color: var(--colordes);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #8e24aa;
+   /*Estilos de texto*/
+ color: #8e24aa;
 }
 
-/* Carrusel */
-.carousel {
+/* Body - Header - Footer */
+body {
+    font-family:'lexend';
+    margin: 0;
+}
+
+/* Header */
+header {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 0.1rem;
+    flex-direction: row;
+    background-color:var(--color1);
+    color: var(--colortipo);
+    padding: 1rem 2rem;
+    justify-content: 5px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header-content {
+    background-color:var(--color1);
+    color: var(--colortipo);
+    display:flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* Estilos del título */
+.header-left h1 {
+    flex: 1;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.header-left p {
+    margin: 0;
+}
+
+.header-right ul {
+    justify-content: right;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+    gap: 1rem;
+}
+
+.header-right a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background-color:var(--color1);
+    color: var(--colortipo);
+    text-align: center;
     padding: 1rem;
 }
 
-.carousel-item {
-    flex: 0 0 auto;
-    scroll-snap-align: center;
-    width: 30%;
-}
-
-.carousel-item img {
-    width: 100%;
-    border-radius: 10%;
-}
-
 /* Responsive*/
-/*Carrusel*/
+/*cuerpo*/
 @media (max-width: 768px) {
-    .carousel-item {
-        width: 45%; /* Reducir el tamaño de las imágenes en pantallas más pequeñas */
+    header {
+        flex-direction: column; 
+        padding: 1rem;
+        align-items: center;
     }
 }
+@media (max-width: 480px) {
+    header {
+        flex-direction: column; 
+        padding: 0.5rem;
+        align-items: center;
+    }
 
-/*Productos*/
-.productos-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
 }
-
-.producto {
-    border: 1px solid #ddd;
-    padding: 10px;
-    width: 200px;
-    text-align: center;
+@media (max-width: 768px) {
+    .carousel-item {
+        width: 45%; 
+    }
 }
 
 @media (max-width: 480px) {
     .carousel-item {
-        width: 80%; /* Las imágenes ocupan más espacio en pantallas aún más pequeñas */
-    }
+        width: 80%; 
+
     .carousel {
-        gap: 0.25rem; /* Reducir aún más el espacio entre imágenes */
-    }
+        gap: 0.25rem;
+    }}
 }

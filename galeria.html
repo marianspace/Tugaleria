@@ -3,65 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TuGalery - Tu arte cerca</title>
+    <title>TuGalery - Galería</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="header-content">
-            <div class="header-left">
-                <h1>TuGalery</h1>
-                <p>Tu arte cerca</p>
+            <div class="header-right">
+            <h1>TuGalery</h1>
+            <p>Tu arte cerca</p>
             </div>
-            <nav class="header-right">
+            <div>
+            <div class="header-right">
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="galeria.html">Obras</a></li>
-                    <li><a href="">Artistas</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="">Exposiciones</a></li>
-                    <li><a href="posts.html">Reseñas</a></li>
-                </ul>
-            </nav>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="galeria.html">Obras</a></li>
+                <li><a href="#">Artistas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="#">Exposiciones</a></li>
+                <li><a href="posts.html">Reseñas</a></li>
+                <div class="carrito-header">
+                    <div class="carrito-header">
+                        <a href="#" onclick="mostrarCarrito();">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                            </svg>
+                            Carrito
+                        </a>
+                    </div>
+            </div>
         </div>
     </header>
     <main>
-    <section id="obras" class="gallery">
-        <h2>Obras</h2>
-        <div class="gallery-container">
-    
-        </div>
-    </section>
+        <section>
+            <h1>Galeria</h1>
+            <div id="tienda-container" class="tienda-container"></div>
+        </section>
+        <section id="carrito">
+            <h2>Carrito</h2>
+            <div id="carrito-container"></div>
+        </section>
+
     </main>
+
     <footer>
         <p>&copy; 2024 TuGalery - Todos los derechos reservados</p>
         <p>Mariana Constanza</p>
         <p>Redes</p> <!-- iconos de redes -->
     </footer>
-    <script>
-        fetch('obras/obras.json')  
-            .then(response => response.json())
-            .then(obras => {
-                const contenedorGaleria = document.querySelector('.gallery-container');
 
-                obras.forEach(obra => {
-                    const divObra = document.createElement('div');
-                    divObra.classList.add('card');
-                    divObra.innerHTML = `
-                        <a href="obras/${obra.titulo}.html">
-                            <img src="img/${obra.titulo}.jpg" alt="${obra.titulo}">
-                        </a>
-                        <h3>${obra.titulo}</h3>
-                        <p>Artista: ${obra.artista}</p>
-                        <p>Técnica: ${obra.tecnica}</p>
-                        <p>Año: ${obra.ano}</p>
-                        <p>Precio: $${obra.precio}</p>
-                        <p><a href="#reseña-${obra.titulo}">Ver reseña del artista o la obra</a></p>
-                    `;
-                    contenedorGaleria.appendChild(divObra);
-                });
-            })
-            .catch(error => console.error('Error al cargar las obras:', error));
-    </script>
+    <script src="script.js"></script>
+    <script src="./js/tienda.js"></script>
 </body>
 </html>

@@ -1,0 +1,51 @@
+.tienda-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px;
+}
+
+.obras {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.obras-img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.btn-comprar {
+    background-color: #007bff;
+    border: none;
+    padding: 5px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-comprar:hover {
+    background-color: #ffffff;
+}
+
+.carrito-header {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.carrito-header svg {
+    width: 30px;
+    height: 30px;
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TuGalery - Tu arte cerca</title>
     <link rel="stylesheet" href="styles.css">
+
     <style>
     #mensaje-desarrollo {
         position: fixed;
@@ -27,37 +28,36 @@
 </head>
 
 <body>
-    <div id="mensaje-desarrollo">
+<div id="mensaje-desarrollo">
 Todavía no esta terminada
     </div>
-
     <header>
         <div class="header-content">
-            <div class="header-left">
-                <h1>TuGalery</h1>
-                <p>Tu arte cerca</p>
+            <div class="header-right">
+            <h1>TuGalery</h1>
+            <p>Tu arte cerca</p>
             </div>
-            <nav class="header-right">
+            <div>
+            <div class="header-right">
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="galeria.html">Obras</a></li>
-                    <li><a href="#">Artistas</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="#">Exposiciones</a></li>
-                    <li><a href="posts.html">Reseñas</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="galeria.html">Obras</a></li>
+                <li><a href="#">Artistas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="#">Exposiciones</a></li>
+                <li><a href="posts.html">Reseñas</a></li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                  </svg>
                 </ul>
-            </nav>
+            </div>
         </div>
     </header>
 
     <main>
-        <!-- Carrusel -->
-        <section id="inicio" class="carousel">
-            <div class="carousel-item"><a href="obras/01.html"><img src="img/1.jpg" alt="Obra destacada 1"></a></div>
-            <div class="carousel-item"><a href="obras/02.html"><img src="img/2.jpg" alt="Obra destacada 2"></a></div>
-            <div class="carousel-item"><a href="obras/03.html"><img src="img/3.jpg" alt="Obra destacada 3"></a></div>
-            <div class="carousel-item"><a href="obras/04.html"><img src="img/4.jpg" alt="Obra destacada 4"></a></div>
-            <div class="carousel-item"><a href="obras/01.html"><img src="img/5.jpg" alt="Obra destacada 5"></a></div>
+        <!-- Galeria -->
+        <section id="galeria" class="gallery">
+            <div id="obras-container" class="gallery-container"></div>
         </section>
 
         <!-- Reseñas -->
@@ -75,7 +75,7 @@ Todavía no esta terminada
         <p>Redes</p> <!-- iconos de redes -->
     </footer>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
 
