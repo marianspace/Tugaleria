@@ -37,6 +37,12 @@
     padding: 1px;       
 }
 
+.vercontainer {
+    position: absolute;
+    position-try-order:inherit;
+    background-color: rgb(255, 166, 0);
+    padding: 1px;       
+}
 /* .carrito-header {
     position: relative;
     display: grid; 
