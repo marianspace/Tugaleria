@@ -15,3 +15,8 @@ Para darle entidad se contactarán a diversos especialistas para que hagan rese�
 3. **Galería de Obras**: Presenta las obras en formato de "cards" con información relevante. Enlace a la ficha técnica
 4. **Reseñas**: Reseñas de obras y artistas.
 5. **Formulario de Contacto**: Formulario para que los usuarios puedan comunicarse.
+
+Observaciones: 25/12
+-Pude hacer andar el carrito y sumar, una vez comprado aparece agotado en el botón pero al actualizar desaparece. 
+-No todo es responsive 
+-Solo botón de compra

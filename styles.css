@@ -108,6 +108,19 @@ nav a {
     font-weight: bold;
 }
 
+/*Botones */
+button {
+    background-color: #007bff;
+    border-color: 2px #b7f4f0;
+    padding: 3%;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffffff;
+}
 footer {
     background-color:var(--color1);
     color: var(--colortipo);
@@ -115,34 +128,25 @@ footer {
     padding: 1rem;
 }
 
+.carrito {
+    display: grid;
+    place-content: center;
+}
+
 /* Responsive*/
 /*cuerpo*/
 @media (max-width: 768px) {
-    header {
+    body {
         flex-direction: column; 
         padding: 1rem;
         align-items: center;
     }
 }
 @media (max-width: 480px) {
-    header {
+    body {
         flex-direction: column; 
         padding: 0.5rem;
         align-items: center;
     }
 
-}
-@media (max-width: 768px) {
-    .carousel-item {
-        width: 45%; 
-    }
-}
-
-@media (max-width: 480px) {
-    .carousel-item {
-        width: 80%; 
-
-    .carousel {
-        gap: 0.25rem;
-    }}
 }
