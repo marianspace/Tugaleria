@@ -1,21 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
     renderObras(obras);
-    const obrasGuardadas = JSON.parse(localStorage.getItem('obras'));
-    if (Array.isArray(obrasGuardadas) && obrasGuardadas.length > 0) {
-        obras = obrasGuardadas;
-    }
+
+    localStorage.setItem('carrito', JSON.stringify(carrito)); 
+
     mostrarCarrito();
     actualizarCarrito();
-    vaciarcarrito();
 });
 
 const obrasContainer = document.getElementById("tienda-container");
 
 function renderObras(obras) {
-    obrasContainer.innerHTML = '';
+    obrasContainer.innerHTML = ''; // Limpiar el contenedor antes de renderizar las obras
     obras.forEach((obra) => {
         const obraElement = `
-            <div class="obras">
+            <div class="obras" id="obra-${obra.id}">
                 <a href="${obra.detalle}">
                     <img src="${obra.img}" alt="${obra.titulo}" class="obras-img">
                 </a>
@@ -24,8 +22,9 @@ function renderObras(obras) {
                 <p><strong>Técnica:</strong> ${obra.tecnica}</p>
                 <p><strong>Año:</strong> ${obra.ano}</p>
                 <p><strong>Precio:</strong> $${obra.precio}</p>
+                <p class="stock" id="stock-${obra.id}"><strong>Stock:</strong> ${obra.stock}</p>
                 ${obra.stock > 0 ? 
-                    `<button onclick="agregarAlCarrito('${obra.id}')">Comprar</button>` : 
+                    `<button id="btn-${obra.id}" onclick="agregarAlCarrito('${obra.id}')">Comprar</button>` : 
                     `<p>Agotado</p>`}
             </div>
         `;
@@ -38,57 +37,52 @@ let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 function agregarAlCarrito(id) {
     console.log("Tipo de carrito:", typeof carrito, carrito);
 
-    localStorage.setItem('obras', JSON.stringify(obras)); 
-
     const obra = obras.find(o => o.id === id); 
     if (obra && obra.stock > 0) {
         carrito.push(obra); 
         obra.stock -= 1; 
+        
+        localStorage.setItem('carrito', JSON.stringify(carrito)); 
+        
+
         mostrarCarrito(); 
-        actualizarCarrito();
+        actualizarCarrito(); 
         actualizarTotalCarrito();
-        alert(`Se ha agregado "${obra.titulo}" al carrito.`);
-        renderObras(obras);
-        localStorage.setItem('obras', JSON.stringify(obras)); 
-        const stockElement = document.getElementById(`stock-${id}`);
-        const buttonElement = document.getElementById(`btn-${id}`);
+        
+        alert(`la"${obra.titulo}" esta en el carrito.`);
+        
+        const stockElement = document.getElementById(`stock-${obra.id}`);
         if (stockElement) {
             stockElement.textContent = `Stock: ${obra.stock}`;
         }
+
+        const buttonElement = document.getElementById(`btn-${id}`);
         if (obra.stock === 0 && buttonElement) {
             buttonElement.disabled = true;
             buttonElement.textContent = "Agotado";
         }
     } else {
-        alert("No hay stock disponible.");
-    }
-}
-
-function actualizarStock(id) {
-    const producto = productos[id];
-    const stockElement = document.getElementById(`stock-${id}`);
-    const buttonElement = document.getElementById(`btn-${id}`);
-    
-    stockElement.textContent = `Stock: ${producto.stock}`;
-    if (producto.stock === 0) {
-        buttonElement.disabled = true; // Desactiva el botón
-        buttonElement.textContent = "Agotado";
+        alert("No hay stock.");
     }
 }
 
 function eliminarDelCarrito(id) {
-        carrito = carrito.filter(item => item.id !== id); // Filtrar el item a eliminar
-        const obraEliminada = obras.find(o => o.id === id);
-        if (obraEliminada) {
-            obraEliminada.stock += 1; 
-        }
-        actualizarCarrito();
-        mostrarCarrito(); 
-        renderObras(obras); 
+    carrito = carrito.filter(item => item.id !== id);
+    const obraEliminada = obras.find(o => o.id === id);
+    if (obraEliminada) {
+        obraEliminada.stock += 1; 
+    }
+
+    localStorage.setItem('carrito', JSON.stringify(carrito)); 
+    
+    actualizarCarrito();
+    actualizarTotalCarrito();
+    mostrarCarrito(); 
+    renderObras(obras); 
 }
 
 function actualizarCarrito() {
-    localStorage.setItem('carrito', JSON.stringify(carrito));
+    localStorage.setItem('carrito', JSON.stringify(carrito)); // 
 }
 
 function calcularTotal() {
@@ -104,37 +98,20 @@ function mostrarCarrito() {
     } else {
         carrito.forEach(item => {
             const itemElement = `
-                <div class="arrito-container">
                 <div class="carrito-item">
                     <h3>${item.titulo}</h3>
                     <p>Precio: $${item.precio}</p>
                     <button onclick="eliminarDelCarrito('${item.id}')">Eliminar</button>
-                </div></div>
+                </div>
             `;
             carritoContainer.innerHTML += itemElement;
         });
     }
 }
 
-mostrarCarrito();
-
 function actualizarTotalCarrito() {
     const total = carrito.reduce((total, item) => total + item.precio, 0);
-    
     document.getElementById("total-carrito").innerText = `$${total.toFixed(2)}`;
-}  
-
-document.getElementById("vaciarcarrito").addEventListener("click", vaciarcarrito);
-
-function vaciarcarrito() {
-    carrito.forEach(item => {
-        const obraEliminada = obras.find(o => o.id === item.id);
-        if (obraEliminada) {
-            obraEliminada.stock += 1; // 
-        }
-    });
-    carrito = [];
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-    mostrarCarrito();  
-    renderObras(obras); 
 }
+
+

@@ -51,7 +51,7 @@ header {
     align-items: stretch;
     background-color:var(--color1);
     color: var(--colortipo);
-    padding: 0 3%;
+    padding: 1% 2% 1% 2%;
     transition: all 0.3s ease;
 }
 
@@ -122,6 +122,13 @@ nav a {
     font-weight: bold;
     font-size: 1rem;
     transition: color 0.3s ease;
+}
+
+.sectioncss {
+    display :block;
+    justify-content: space-around;
+    align-items: stretch;
+    padding: 2% 2% 2% 2%;
 }
 
 /*Botones */
