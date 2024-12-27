@@ -37,35 +37,32 @@
     </header>
     <main>
         <!-- la idea es que a los costados se pueda navegar para la anterior y posterior-->
-    <section id="card1" class="card1">
-        <section class="card1-img">
+        <section id="card1" class="card1">
+            <section class="card-img">
                 <figure>
-                 <img src="../img/1.jpg" alt="Obra 1" style="width: 350px;">
+                    <img src="../img/1.jpg" alt="Obra 1" style="width: 350px;">
                 </figure>
-        </section>
-        <section class="product_info">
-            <h3>Colores</h3>
-            <p>Artista: Mariana</p>
-            <p>Técnica: Bordado</p>             
-            <p>Año: 2020</p>
-            <p>Precio: $500</p>
-            <p><a href="#reseña-obra1">Ver reseña del artista o la obra</a></p>
-            <button class="btn-comprar" onclick="agregarAlCarrito">Añadir al Carrito</button>
+            </section>
+            <section class="product_info">
+                <h3>Colores</h3>
+                <p>Artista: Mariana</p>
+                <p>Técnica: Bordado</p>             
+                <p>Año: 2020</p>
+                <p>Precio: $5000</p>
+                <button id="btn-1" onclick="agregarAlCarrito('1')">Añadir al Carrito</button>
+            </section>
         </section>
     </section>
-    
-    <!-- Carrito de compras -->
-    <section id="carrito">
-        <h2>Carrito</h2>
-        <div id="carrito-container"></div>
+ <section id="navegacion-obras" style="margin-top: 20px; text-align: center;">
+        <a href="4.html"><button>← Anterior</button></a>
+        <a href="2.html"><button>Siguiente →</button></a>
     </section>
-    </main>
+</main>
 <footer>
         <p>&copy; 2024 TuGalery - Todos los derechos reservados</p>
         <p>Mariana Constanza</p>
         <p>Redes</p> <!-- iconos de redes -->
 </footer>
-<script src="../js/obras.js"></script>
-<script src="../js/tienda.js"></script>
+<script src="../js/tienda.js" defer></script>
 </body>
 </html>

@@ -7,48 +7,46 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="header-right">
+<header>
+    <div class="header-content">
+        <div class="header-left">
             <h1>TuGalery</h1>
             <p>Tu arte cerca</p>
-            </div>
-            <div>
-                <div class="header-right">
-                     <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                     <li><a href="galeria.html">Obras</a></li>
-                     <li><a href="#">Artistas</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="#">Exposiciones</a></li>
-                    <li><a href="posts.html">Reseñas</a></li>
-                    <a href="carrito.html"> 
-                        <div class="carrito-header">
-                            <div id="carrito-header">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
-                                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
-                                <span id="total-carrito">0</span> 
-                                <div class="hidden" id="carrito-container"></div>
-                                </svg>
-                            </div>
-                        </div>
-                    </a>
-            </div>
         </div>
-    </header>
+        <nav div class="header-right">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="galeria.html">Obras</a></li>
+                <li><a href="#">Artistas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="#">Exposiciones</a></li>
+                <li><a href="posts.html">Reseñas</a></li>
+                <div class="carrito-header">
+                      <a href="carrito.html"> 
+                <div id="carrito-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/> </svg>
+                    <span id="total-carrito">0</span>
+                </div>
+                    </a>
+                     <div class="hidden" id="carrito-container"></div>
+                </div>
+            </ul>
+        </nav>
+    </div>
+</header>
     <main>
         <section>
             <h1>Galeria</h1>
             <div id="tienda-container" class="tienda-container"></div>
         </section>
     </main>
-
-    <footer>
+<footer>
         <p>&copy; 2024 TuGalery - Todos los derechos reservados</p>
         <p>Mariana Constanza</p>
         <p>Redes</p> <!-- iconos de redes -->
-    </footer>
-    <script src="./js/obras.js" defer></script>
-    <script src="./js/tienda.js" defer></script>
+</footer>
+<script src="./js/obras.js" defer></script>
+<script src="./js/tienda.js" defer></script>
 </body>
 </html>

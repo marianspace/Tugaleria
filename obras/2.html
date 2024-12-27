@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TuGalery - Tu arte cerca</title>
-        <link rel="stylesheet" href="../styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuGalery - Tu arte cerca</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <header>
@@ -35,37 +35,37 @@
             </nav>
         </div>
     </header>
-    <main>
+<main>
         <!-- la idea es que a los costados se pueda navegar para la anterior y posterior-->
-    <section id="card1" class="card1">
-        <section class="card1-img">
+    <section id="obras" class="card1">
+        <section id="product_img">
                 <figure>
-                 <img src="../img/1.jpg" alt="Obra 1" style="width: 350px;">
+                 <img src="../img/2.jpg" alt="Obra 2" style="width: 350px;">
                 </figure>
         </section>
-        <section class="product_info">
-            <h3>Colores</h3>
-            <p>Artista: Mariana</p>
-            <p>Técnica: Bordado</p>             
-            <p>Año: 2020</p>
-            <p>Precio: $500</p>
-            <p><a href="#reseña-obra1">Ver reseña del artista o la obra</a></p>
-            <button class="btn-comprar" onclick="agregarAlCarrito">Añadir al Carrito</button>
+        <section id="product_info">
+            <h3>Esto no es una pipa</h3>
+            <p>Artista: Pepita</p>
+            <p>Técnica: Bordado sobre papel</p>
+            <p>Año: 2023</p>
+            <p>Precio: $4400</p>
+            <p><a href="#reseña-obra2">Ver reseña del artista o la obra</a></p>
+            <button id="btn-1" onclick="agregarAlCarrito('2')">Añadir al Carrito</button>
         </section>
     </section>
-    
-    <!-- Carrito de compras -->
-    <section id="carrito">
-        <h2>Carrito</h2>
-        <div id="carrito-container"></div>
-    </section>
-    </main>
+<section id="navegacion-obras" style="margin-top: 20px; text-align: center;">
+    <a href="1.html"><button style="margin-right: 10px;">← Anterior</button></a>
+    <a href="3.html"><button>Siguiente →</button></a>
+</section>
+</main>
+
 <footer>
         <p>&copy; 2024 TuGalery - Todos los derechos reservados</p>
         <p>Mariana Constanza</p>
         <p>Redes</p> <!-- iconos de redes -->
 </footer>
-<script src="../js/obras.js"></script>
-<script src="../js/tienda.js"></script>
+<script src="../js/obras.js" defer></script>
+<script src="../script.js" defer></script>
+<script src="../js/tienda.js" defer></script>
 </body>
 </html>

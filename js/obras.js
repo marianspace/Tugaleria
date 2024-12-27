@@ -8,7 +8,7 @@ const obras = [
       tecnica: "Bordado",
       ano: 2020,
       precio: 5000,
-      detalle: "obras/01.html",
+      detalle: "obras/1.html",
       stock: 1,
     },
     {
@@ -19,8 +19,8 @@ const obras = [
       tecnica: "Bordado sobre papel",
       ano: 2023,
       precio: 4400,
+      detalle: "obras/2.html",
       stock: 1,
-      detalle: "obras/02.html",
     },
     {
       id: "3",
@@ -30,8 +30,8 @@ const obras = [
       tecnica: "Bordado sobre fotografía",
       ano: 2023,
       precio: 5000,
+      detalle: "obras/3.html",
       stock: 1,
-      detalle: "obras/03.html",
     },
     {
       id: "4",
@@ -41,7 +41,7 @@ const obras = [
       tecnica: "Bordado sobre fotografía",
       ano: 2023,
       precio: 5000,
+      detalle: "obras/4.html",
       stock: 1,
-      detalle: "obras/04.html",
     }
   ];
